@@ -5414,3 +5414,2867 @@ Processing by ArticlesController#index as HTML
   [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
   Rendered articles/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to SorceryCore (20160222180345)
+  [1m[35m (0.2ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/MrPoopybutthole/Documents/HTML_projects/the_odin_project/project_rails/blogger/db/migrate/20160222180345_sorcery_core.rb:9)
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "crypted_password" varchar NOT NULL, "salt" varchar NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (2.3ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "index_authors_on_email" ON "authors" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160222180345"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_authors_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_authors_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_article_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_taggings_on_article_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_taggings_on_article_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_taggings_on_tag_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_taggings_on_tag_id' AND type='index'
+
+
+
+Started GET "/authors" for ::1 at 2016-02-22 12:15:15 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/authors"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (104.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (177.7ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 12:16:56 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 457ms (Views: 453.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 12:16:57 -0600
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 12:17:31 -0600
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (17.8ms)
+  Rendered authors/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 58ms (Views: 44.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 12:18:26 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EVRYbiNmQQLYWh4+6BeQimPXVlJV/txxYLta9VWTX6ju2NirFL/NdJWk8PC0jo5WbdIsA9l8En6feRJ+1NJyoQ==", "author"=>{"username"=>"admin", "email"=>"admin@example.com", "passowrd"=>"passowrd", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'passowrd' for Author.):
+  app/controllers/authors_controller.rb:27:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.2ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 12:21:03 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+4lkUdQFTUBeklQ/nhBrd2J/7bpTWBVBv4bVzGf0rbkEBeSU49zBNhNsuvHCiXWrbHqX69/a205ARJ1H5rWAsA==", "author"=>{"username"=>"admin", "email"=>"admin@example.com", "passowrd"=>"password", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'passowrd' for Author.):
+  app/controllers/authors_controller.rb:27:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.2ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 12:30:49 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+4lkUdQFTUBeklQ/nhBrd2J/7bpTWBVBv4bVzGf0rbkEBeSU49zBNhNsuvHCiXWrbHqX69/a205ARJ1H5rWAsA==", "author"=>{"username"=>"admin", "email"=>"admin@example.com", "passowrd"=>"passowrd", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+Unpermitted parameter: passowrd
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "authors" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "admin"], ["email", "admin@example.com"], ["created_at", "2016-02-22 18:30:49.307083"], ["updated_at", "2016-02-22 18:30:49.307083"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::StatementInvalid (SQLite3::ConstraintException: NOT NULL constraint failed: authors.crypted_password: INSERT INTO "authors" ("username", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  app/controllers/authors_controller.rb:30:in `block in create'
+  app/controllers/authors_controller.rb:29:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.0ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 12:56:27 -0600
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (2.6ms)
+  Rendered authors/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 12:56:27 -0600
+
+
+Started POST "/authors" for ::1 at 2016-02-22 12:56:47 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o/Kupl6PrYiptpkIo0cIdkQM90GZeaXyN7qH/iZ/CkBcfi5jaVYh/uRId8b/3haqSgmNEBX7a/3IeM91pz4nSQ==", "author"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["salt", "ZEmkp4G4pQDCdBxm3Woq"], ["crypted_password", "$2a$10$YSC0a9StvHgGVFWlLkmybunzK7zL.0OfyySkFqzkkyRxL29zyoVy."], ["created_at", "2016-02-22 18:56:48.116380"], ["updated_at", "2016-02-22 18:56:48.116380"]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::StatementInvalid (SQLite3::ConstraintException: NOT NULL constraint failed: authors.username: INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/authors_controller.rb:30:in `block in create'
+  app/controllers/authors_controller.rb:29:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.0ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 13:28:11 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o/Kupl6PrYiptpkIo0cIdkQM90GZeaXyN7qH/iZ/CkBcfi5jaVYh/uRId8b/3haqSgmNEBX7a/3IeM91pz4nSQ==", "author"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "admin@example.com"], ["salt", "pMLPyyqd8qqxos76sgT4"], ["crypted_password", "$2a$10$gEJBUVQ9DARmhVtKArRJhe7GFgPoXobUe.ndjZWbK0vs3tOC0V91i"], ["created_at", "2016-02-22 19:28:11.801987"], ["updated_at", "2016-02-22 19:28:11.801987"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::StatementInvalid (SQLite3::ConstraintException: NOT NULL constraint failed: authors.username: INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/authors_controller.rb:30:in `block in create'
+  app/controllers/authors_controller.rb:29:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.8ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 13:29:59 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o/Kupl6PrYiptpkIo0cIdkQM90GZeaXyN7qH/iZ/CkBcfi5jaVYh/uRId8b/3haqSgmNEBX7a/3IeM91pz4nSQ==", "author"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["salt", "fKbVkLE8FCt2asFj1ueE"], ["crypted_password", "$2a$10$nKMaSjFNeUR6YzuW42fldOFoOkLFSnaWDJmrWQxCx0cK8Uy8Y0Yri"], ["created_at", "2016-02-22 19:29:59.388308"], ["updated_at", "2016-02-22 19:29:59.388308"]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::StatementInvalid (SQLite3::ConstraintException: NOT NULL constraint failed: authors.username: INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/authors_controller.rb:30:in `block in create'
+  app/controllers/authors_controller.rb:29:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.0ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.5ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 13:30:45 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o/Kupl6PrYiptpkIo0cIdkQM90GZeaXyN7qH/iZ/CkBcfi5jaVYh/uRId8b/3haqSgmNEBX7a/3IeM91pz4nSQ==", "author"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "admin@example.com"], ["salt", "BcjDD4G94v53Mp4UZ4c3"], ["crypted_password", "$2a$10$6/dpFTFPHpfeiEurYlNT4.2FVlGyVCl4rpWvJSTYDZ214v6QBSipO"], ["created_at", "2016-02-22 19:30:46.141134"], ["updated_at", "2016-02-22 19:30:46.141134"]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::StatementInvalid (SQLite3::ConstraintException: NOT NULL constraint failed: authors.username: INSERT INTO "authors" ("email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)):
+  app/controllers/authors_controller.rb:30:in `block in create'
+  app/controllers/authors_controller.rb:29:in `create'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.6ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 13:32:01 -0600
+Processing by AuthorsController#new as HTML
+  Rendered authors/_form.html.erb (4.0ms)
+  Rendered authors/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:32:01 -0600
+
+
+Started POST "/authors" for ::1 at 2016-02-22 13:32:14 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SnJ8ym0a410ScEwrhixRvOn8fqAzP9S8F17zIguvoeO1/vwPWsNvK1+OouXatU9g5/kE8b+9GrPonLupiu6M6g==", "author"=>{"username"=>"admin@example.com", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "authors" ("username", "email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "admin@example.com"], ["email", "admin@example.com"], ["salt", "zrpLpsrs3byLhTiLas56"], ["crypted_password", "$2a$10$DHF3TUs7oeMnaKMwGwp3/.TSwSkXhwZ6hN99JLQOJ/7Gteto8C8o."], ["created_at", "2016-02-22 19:32:14.584366"], ["updated_at", "2016-02-22 19:32:14.584366"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 172ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:32:14 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `passowrd' for #<Author:0x007f994f4e2a38>):
+    12: 
+    13: <p>
+    14:   <strong>Passowrd:</strong>
+    15:   <%= @author.passowrd %>
+    16: </p>
+    17: 
+    18: <p>
+  app/views/authors/show.html.erb:15:in `_app_views_authors_show_html_erb___3013680448204868194_70148218619300'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.4ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:36:00 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 36.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:36:00 -0600
+
+
+Started GET "/authors" for ::1 at 2016-02-22 13:36:05 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `passowrd' for #<Author:0x007f99518aad58>):
+    18:       <tr>
+    19:         <td><%= author.username %></td>
+    20:         <td><%= author.email %></td>
+    21:         <td><%= author.passowrd %></td>
+    22:         <td><%= author.password_confirmation %></td>
+    23:         <td><%= link_to 'Show', author %></td>
+    24:         <td><%= link_to 'Edit', edit_author_path(author) %></td>
+  app/views/authors/index.html.erb:21:in `block in _app_views_authors_index_html_erb__4400113341052218992_70148229889420'
+  app/views/authors/index.html.erb:17:in `_app_views_authors_index_html_erb__4400113341052218992_70148229889420'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.0ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 13:36:06 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `passowrd' for #<Author:0x007f994ac0e938>):
+    18:       <tr>
+    19:         <td><%= author.username %></td>
+    20:         <td><%= author.email %></td>
+    21:         <td><%= author.passowrd %></td>
+    22:         <td><%= author.password_confirmation %></td>
+    23:         <td><%= link_to 'Show', author %></td>
+    24:         <td><%= link_to 'Edit', edit_author_path(author) %></td>
+  app/views/authors/index.html.erb:21:in `block in _app_views_authors_index_html_erb__4400113341052218992_70148176383980'
+  app/views/authors/index.html.erb:17:in `_app_views_authors_index_html_erb__4400113341052218992_70148176383980'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (112.0ms)
+
+
+Started GET "/authors/1/edit" for ::1 at 2016-02-22 13:36:08 -0600
+Processing by AuthorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (3.2ms)
+  Rendered authors/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/authors/1" for ::1 at 2016-02-22 13:36:18 -0600
+Processing by AuthorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yHVt3YtS0GpHyIXA6KaaEiplw+VE/xNDMpYeXmWGsoU3+e0YvItcHAo2aw60P4TOJGC5tMh93UzNVFbV5MefjA==", "author"=>{"username"=>"admin@example.com", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Author", "id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "authors" SET "salt" = ?, "crypted_password" = ?, "updated_at" = ? WHERE "authors"."id" = ?  [["salt", "RKy8CpnCwKxjqVvvpzAF"], ["crypted_password", "$2a$10$e3QQz603w3UoSrA.gdDRfup6pyYi48.cASEwQ9ff.gkqI/W6F/SJG"], ["updated_at", "2016-02-22 19:36:18.981976"], ["id", 1]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 173ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:36:18 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:37:17 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:17 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:17 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:37:17 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:37:18 -0600
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:37:32 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:37:32 -0600
+
+
+Started GET "/authors" for ::1 at 2016-02-22 13:37:36 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `passowrd' for #<Author:0x007f994f500538>):
+    18:       <tr>
+    19:         <td><%= author.username %></td>
+    20:         <td><%= author.email %></td>
+    21:         <td><%= author.passowrd %></td>
+    22:         <td><%= author.password_confirmation %></td>
+    23:         <td><%= link_to 'Show', author %></td>
+    24:         <td><%= link_to 'Edit', edit_author_path(author) %></td>
+  app/views/authors/index.html.erb:21:in `block in _app_views_authors_index_html_erb__4400113341052218992_70148218721560'
+  app/views/authors/index.html.erb:17:in `_app_views_authors_index_html_erb__4400113341052218992_70148218721560'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.8ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 13:37:36 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `passowrd' for #<Author:0x007f994f48f3d8>):
+    18:       <tr>
+    19:         <td><%= author.username %></td>
+    20:         <td><%= author.email %></td>
+    21:         <td><%= author.passowrd %></td>
+    22:         <td><%= author.password_confirmation %></td>
+    23:         <td><%= link_to 'Show', author %></td>
+    24:         <td><%= link_to 'Edit', edit_author_path(author) %></td>
+  app/views/authors/index.html.erb:21:in `block in _app_views_authors_index_html_erb__4400113341052218992_70148230099820'
+  app/views/authors/index.html.erb:17:in `_app_views_authors_index_html_erb__4400113341052218992_70148230099820'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (117.9ms)
+
+
+Started GET "/authors/1/edit" for ::1 at 2016-02-22 13:37:40 -0600
+Processing by AuthorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (2.4ms)
+  Rendered authors/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/authors/1" for ::1 at 2016-02-22 13:37:41 -0600
+Processing by AuthorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cye4IsIKs2TE9rQuExVXObaXyQisx8EoPOuvc3IO73D0qzjn9dM/EokIWuBPjEnluJKzWSBFDyfDKef480/CeQ==", "author"=>{"username"=>"admin@example.com", "email"=>"admin@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Author", "id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:37:41 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 13:37:59 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 13:38:08 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/1/edit" for ::1 at 2016-02-22 13:38:10 -0600
+Processing by AuthorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered authors/_form.html.erb (2.6ms)
+  Rendered authors/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 13:39:59 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 52ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 13:40:05 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:40:05 -0600
+
+
+Started GET "/" for ::1 at 2016-02-22 13:40:17 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:40:17 -0600
+
+
+Started GET "/" for ::1 at 2016-02-22 13:41:27 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 13:41:27 -0600
+
+
+Started GET "/" for ::1 at 2016-02-22 14:39:00 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 259ms (Views: 247.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:39:00 -0600
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:39:05 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 14:39:18 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vWw1nEwrAW/FBJqeYxp5wRBM9ExsAhcd2PJ9YzxCLIJC4LVZe/KNGYj6dFA/g2cdHkmOHeCA2RInMDXovQMBiw==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 167ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:39:18 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 14:41:45 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/authors
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 14:41:45 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:43:18 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 14:43:29 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E2a+LgdoqQOV8qJkZwNyhfycRGP7ES0+eqGYQ2Tte3lUTreUWsXC1P/86PqQTit/LTOsgE1IAvSCXMT6+5RThg==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 167ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:43:29 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:43:32 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:43:37 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:43:49 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 14:43:52 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/authors
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 14:43:52 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/1" for ::1 at 2016-02-22 14:43:55 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered authors/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:43:57 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:43:59 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:44:00 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:44:02 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:44:06 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:46:39 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 14:46:51 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R9lsfWPfjTBsYkVIW9DrLa9FI+FdvDfX8bSF9UHFruhcB/+r2AALx9nq4+Qk4kXH+zznmB11+c9WjKPJNHb1pw==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 169ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:46:51 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (7.3ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 14:46:54 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:46:54 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/9" for ::1 at 2016-02-22 14:52:28 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 9]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 9]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (11.3ms)
+  Rendered articles/show.html.erb within layouts/application (116.4ms)
+Completed 200 OK in 190ms (Views: 147.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/articles/9/edit" for ::1 at 2016-02-22 14:52:31 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 9]]
+  Rendered articles/_form.html.erb (8.6ms)
+  Rendered articles/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/articles/9" for ::1 at 2016-02-22 14:52:42 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FafjcBJO+QEDe+3SfNHGFbd1uC3BWfHAFXWSn+TanMrFcfw6ixXp5fsqmKAtFYj7lB+8ghDaalQNucwPkUSpnw==", "article"=>{"title"=>"Did I update this?", "body"=>"Yes it should be, unless you messed something up with the partial view", "tag_list"=>""}, "commit"=>"Update Article", "id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 9]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["title", "Did I update this?"], ["updated_at", "2016-02-22 20:52:42.815255"], ["id", 9]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/9
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/9" for ::1 at 2016-02-22 14:52:42 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 9]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 9]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered articles/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:52:49 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/4" for ::1 at 2016-02-22 14:53:02 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 4]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered articles/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 64ms (Views: 44.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/articles/4/edit" for ::1 at 2016-02-22 14:53:07 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 4]]
+  Rendered articles/_form.html.erb (3.5ms)
+  Rendered articles/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/4" for ::1 at 2016-02-22 14:53:30 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HKXmCpeU2QlPfa7X48u/F4O1QY2AByTsZDrgAzcd8TnMc/lADs/J7bcs26WyD/H5oN9FIlGEv3h89r6TQoPEbA==", "article"=>{"title"=>"Will this allow me to update this Article", "body"=>"If I am not logged in. ", "tag_list"=>""}, "commit"=>"Update Article", "id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 4]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "articles" SET "title" = ?, "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["title", "Will this allow me to update this Article"], ["body", "If I am not logged in. "], ["updated_at", "2016-02-22 20:53:30.126454"], ["id", 4]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/4
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/articles/4" for ::1 at 2016-02-22 14:53:30 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 4]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered articles/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:53:42 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:54:59 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 52ms (Views: 45.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 14:54:59 -0600
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:55:01 -0600
+Processing by AuthorSessionsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 14:55:01 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:55:05 -0600
+Processing by AuthorSessionsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 14:55:05 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 14:56:36 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 14:56:36 -0600
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:56:39 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:56:43 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 14:56:45 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (1.3ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered articles/show.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 77ms (Views: 59.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles/2/edit" for ::1 at 2016-02-22 14:56:48 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_form.html.erb (5.3ms)
+  Rendered articles/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/articles/2" for ::1 at 2016-02-22 14:56:50 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KexCsfdpC5nh0vRZkXSyvIE1wenNx7+wUVLzmZj4f5L5Ol37bjIbfRmDgSvAsPxSol/FRhxEJCRJnq0J7WZKxw==", "article"=>{"title"=>"2nd in line UPDATED", "body"=>"This is the body of the 2nd Article\r\n\r\nYeah this updated alright. Whats it to you? You think you followed some simple instructions and are now some sort of Rails King? No, think again dude. You still have much to learn.", "tag_list"=>"ruby, tech, technology, frustration"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1[0m  [["name", "ruby"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1  [["name", "tech"]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1[0m  [["name", "technology"]]
+  [1m[35mTag Load (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1  [["name", "frustration"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 14:56:50 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (1.0ms)
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered articles/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:56:55 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 14:56:59 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 14:57:09 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cKDDHY8SlWQRtY2vGqAiH83SPB6Gqcw6UYeqvo0A7WWgdtxXFkmFgOnk+N1LZGzx7rg4sVcqV65JS/Qu+J7YMA==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+  Rendered author_sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 195ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 14:57:22 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nh4Wo3s5OaUDnvQzDFPOgvOisi2/kd7W9ruyCviy4ElOyAnp4mIpQfvPgUFdl4Bs0Mi2gm4SRULud+yajSzVHA==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 153ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:57:22 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 14:57:26 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (0.9ms)
+  Rendered articles/show.html.erb within layouts/application (12.1ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles/2/edit" for ::1 at 2016-02-22 14:57:35 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_form.html.erb (4.6ms)
+  Rendered articles/edit.html.erb within layouts/application (7.4ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/articles/2" for ::1 at 2016-02-22 14:57:38 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rcb4lRrKAeY6omZrGQ/i+7HXUSYOqAisVJPF8qjotkWVEOffg5ERAsLzExlIy6wVkr1Vid8rkzhMX5ti3XaDEA==", "article"=>{"title"=>"2nd in line UPDATED", "body"=>"This is the body of the 2nd Article\r\n\r\nYeah this updated alright. Whats it to you? You think you followed some simple instructions and are now some sort of Rails King? No, think again dude. You still have much to learn.", "tag_list"=>"ruby, tech, technology, frustration"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1  [["name", "ruby"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1[0m  [["name", "tech"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1  [["name", "technology"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1[0m  [["name", "frustration"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 14:57:38 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered articles/show.html.erb within layouts/application (9.1ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:57:40 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/10" for ::1 at 2016-02-22 14:57:46 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 10]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 10]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered articles/show.html.erb within layouts/application (7.8ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:57:53 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 14:57:56 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:57:56 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/10" for ::1 at 2016-02-22 14:58:04 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 10]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 10]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered articles/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/articles/10" for ::1 at 2016-02-22 14:58:08 -0600
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8Q1ybSDGn6M1L4nbFyVNKh14+wAQxOMAfml3CnAwD4C2fFjAGDpPzE6KP6NyUvXKzeQACfVohQmU+rwIk64ePQ==", "id"=>"10"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 10]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 6ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:58:08 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/11" for ::1 at 2016-02-22 14:59:21 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 11]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 11]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.4ms)
+  Rendered articles/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 71ms (Views: 51.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/11/edit" for ::1 at 2016-02-22 14:59:24 -0600
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 11]]
+  Rendered articles/_form.html.erb (4.3ms)
+  Rendered articles/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/11" for ::1 at 2016-02-22 14:59:25 -0600
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eZCSKBIqFiW5dEPEK72pJsSgZkVFYQ5TCLft9gmapn4+4biFKtbGSsLR9bxOyhHGFDydTKDNaFriJCb06gS3ww==", "article"=>{"title"=>"Hey guy, yeah you guy....", "body"=>"wanna buy some tags? Yeah just try it out. ", "tag_list"=>"ruby, tech"}, "commit"=>"Update Article", "id"=>"11"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1  [["name", "ruby"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT 1[0m  [["name", "tech"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 11]]
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/11
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/11" for ::1 at 2016-02-22 14:59:25 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 11]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 11]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (0.8ms)
+  Rendered articles/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 14:59:27 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 15:01:03 -0600
+Processing by AuthorsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 15:01:15 -0600
+Processing by AuthorsController#new as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 15:01:15 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 15:02:00 -0600
+Processing by AuthorsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 15:02:00 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 15:02:04 -0600
+Processing by AuthorsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 15:02:04 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 28.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 15:03:47 -0600
+Processing by AuthorsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "authors"[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :zero_authors_or_authenticated rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-02-22 15:03:47 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:03:51 -0600
+Processing by AuthorSessionsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant AuthorSessionsController::Authour):
+  app/controllers/author_sessions_controller.rb:4:in `new'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.6ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:03:52 -0600
+Processing by AuthorSessionsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant AuthorSessionsController::Authour):
+  app/controllers/author_sessions_controller.rb:4:in `new'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.4ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:04:09 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:04:13 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:04:15 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/author/new" for ::1 at 2016-02-22 15:04:23 -0600
+
+ActionController::RoutingError (No route matches [GET] "/author/new"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/MrPoopybutthole/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (127.2ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.7ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/MrPoopybutthole/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:04:30 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 15:04:40 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kicomLFJJUhG2CLJE2Y4/e18ErBfh0BH3Y1kXHLYbF/VVgI1ibX1Jz19lLF2EYAdPeDpuborJk43Hq9ekUZ94g==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 171ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:04:40 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 15:04:45 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:04:45 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:04:47 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 15:04:57 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/aGbUw9kQSzM4zqqPch0Wq+CJVAWGU235UU0Tc6vVcHfrzWCs4nVthgsL5kYGQPcvN0OY4tCGE2m3yH9GMk7eQ==", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'admin@example.com'  ORDER BY "authors"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 155ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:04:57 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/new" for ::1 at 2016-02-22 15:05:02 -0600
+Processing by AuthorsController#new as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_form.html.erb (7.0ms)
+  Rendered authors/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 73ms (Views: 70.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/authors" for ::1 at 2016-02-22 15:05:31 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tmBRpj1qFeiSsFq2TUlWMMVbrDbK2I1457WYtW26iB+Ubv93gYeBckZ/T4VomCG21gSHBVeD2IKkL40Fu9zmpw==", "author"=>{"username"=>"1", "email"=>"2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "authors"
+  [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "authors" ("username", "email", "salt", "crypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "1"], ["email", "2@2.com"], ["salt", "P9oKuvPKjC2CcKewzYsh"], ["crypted_password", "$2a$10$6jfx6WQ4cZLGhZFg0kMS2.obxDW0/eGzye.muJDeUxG8UbvlcPB0i"], ["created_at", "2016-02-22 21:05:31.398644"], ["updated_at", "2016-02-22 21:05:31.398644"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/authors/2
+Completed 302 Found in 171ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/authors/2" for ::1 at 2016-02-22 15:05:31 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered authors/show.html.erb within layouts/application (0.4ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 15:05:41 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (1.3ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/authors/2" for ::1 at 2016-02-22 15:05:44 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered authors/show.html.erb within layouts/application (0.4ms)
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authors" for ::1 at 2016-02-22 15:05:47 -0600
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (1.2ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:05:56 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:05:56 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:15:30 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.3ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:15:30 -0600
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 15:15:34 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered articles/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 66ms (Views: 56.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:15:39 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 15:15:41 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:15:41 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 15:15:46 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered articles/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:15:53 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/9" for ::1 at 2016-02-22 15:15:54 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 9]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered articles/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:15:57 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 15:16:05 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"egwMV/zS5MtzPBzfRrlX6yKlZdm+v832/IKUZTO0U5jjRVa501Pid4IPx9c+AdpcPo1vA4tofVmRocthzVL2zg==", "email"=>"2@2.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."email" = '2@2.com'  ORDER BY "authors"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 164ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:16:05 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 15:16:09 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.9ms)
+  Rendered comments/_form.html.erb (1.0ms)
+  Rendered articles/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:16:14 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:18:40 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:18:40 -0600
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 15:18:43 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (1.1ms)
+  Rendered articles/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:18:45 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:20:22 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/screen.self-16f83778566f2ea814368100ac8e534d7de4921c8d7334c3f01cc357b90c6547.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:20:22 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:20:26 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:20:28 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/9" for ::1 at 2016-02-22 15:20:29 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 9]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 9]]
+  Rendered articles/_comment.html.erb (0.0ms)
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered articles/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:20:35 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:27:13 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/screen.self-4fe3721bfb218ec27c897185f8b277de912b518517adfd6d1374f4e10c308adb.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:27:14 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:28:03 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/screen.self-4fe3721bfb218ec27c897185f8b277de912b518517adfd6d1374f4e10c308adb.css?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:28:03 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:29:06 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 78ms (Views: 76.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/styles.self-e3286ed05da0f35c8a5c6e5b511c1168437b566824d7d2d1e4a23bb629f08dc4.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/screen.self-4fe3721bfb218ec27c897185f8b277de912b518517adfd6d1374f4e10c308adb.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:29:06 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:29:08 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/styles.self-e3286ed05da0f35c8a5c6e5b511c1168437b566824d7d2d1e4a23bb629f08dc4.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/screen.self-4fe3721bfb218ec27c897185f8b277de912b518517adfd6d1374f4e10c308adb.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:29:08 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:29:35 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/styles.self-e3286ed05da0f35c8a5c6e5b511c1168437b566824d7d2d1e4a23bb629f08dc4.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/screen.self-4fe3721bfb218ec27c897185f8b277de912b518517adfd6d1374f4e10c308adb.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:29:35 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:30:34 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 63.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/screen.self-62171ca1518c9bd207a8aa65358e795b183a13b989b0d0d89f72f8805b22e303.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:30:35 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:30:38 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:32:10 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/screen.self-e1b11154a4097341e0a4885563e69c39e723b8064e597d72707bf62bd65392f4.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:32:10 -0600
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:32:19 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 59ms (Views: 57.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/screen.self-ce16f0ccae1beeaa403e8259a778f36c1d96f8baa4400a02bb0aa0779c8a68cb.css?body=1" for ::1 at 2016-02-22 15:32:19 -0600
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:19 -0600
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:19 -0600
+
+
+Started GET "/assets/author_sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:19 -0600
+
+
+Started GET "/assets/styles.self-6558304bd7be5187984c1c5e96f38870ba37fac1c4f079c2ca53a5f3a8857110.css?body=1" for ::1 at 2016-02-22 15:32:19 -0600
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/author_sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-02-22 15:32:20 -0600
+
+
+Started GET "/logout" for ::1 at 2016-02-22 15:32:26 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:32:26 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/2" for ::1 at 2016-02-22 15:32:31 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?  [["article_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 2]]
+  Rendered articles/_comment.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered articles/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2016-02-22 15:32:38 -0600
+Processing by AuthorSessionsController#new as HTML
+  Rendered author_sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2016-02-22 15:32:43 -0600
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qIFK0U0pbyRPCWgGf85OIrYbe1N0Wg0+x6yzF4PZisBilfQyeR5IiOdx9s3qzuAeMJ2xFHBM+rlEtRW7KA5kBQ==", "email"=>"2@2.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = '2@2.com'  ORDER BY "authors"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 165ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:32:43 -0600
+Processing by ArticlesController#index as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for ::1 at 2016-02-22 15:33:08 -0600
+Processing by AuthorSessionsController#destroy as HTML
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2016-02-22 15:33:08 -0600
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.1ms)
