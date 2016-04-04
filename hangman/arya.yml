@@ -1,0 +1,24 @@
+---
+:word:
+- w
+- e
+- b
+- f
+- e
+- e
+- t
+:misses: 4
+:turns: 0
+:correct:
+- '_ '
+- e
+- '_ '
+- '_ '
+- e
+- e
+- '_ '
+:wrong:
+- a
+- i
+- o
+- u
