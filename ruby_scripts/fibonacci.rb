@@ -26,4 +26,6 @@ def fibs_rec2(n, sequence=[0,1])
 	fibs_rec2(n, (sequence << (sequence[-2] + sequence[-1]))) unless sequence.size == n
 	sequence.join(",")
 end
+
+def
 puts fibs_rec2(15)

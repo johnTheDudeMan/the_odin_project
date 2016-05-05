@@ -2,7 +2,7 @@
 
 These are some solutions to projects that I completed from [The Odin Project](http://www.theodinproject.com/) course. I am using this course to train myself in becoming a Full Stack Web Developer.
 
-**Please Note:** I do apologize for the organization of this repository. I unfortunately linked my solutions back to The Odin Project's website, and do not want to break those links by reorganizing now. Please use the below to navigate through the different sub projects.
+**Please Note:** I do apologize for the organization of this repository. I unfortunately linked my solutions back to The Odin Project's website, and do not want to break those links by reorganizing now. Please use the bellow to navigate through the different sub projects.
 
 
 ### Simple Server and Client
@@ -49,7 +49,7 @@ View [source code](https://github.com/johnTheDudeMan/the_odin_project/blob/maste
 ### Hangman
 ###### Ruby
 
-Command line version of the classic game, Hangman. You also have the ability to save and load game. This project was good for practicing with serialization and working with files.
+Comand line version of the classic game, Hangman. You also have the ability to save and load game. This project was good for practicing with serialization and working with files.
 
 View repository [here](https://github.com/johnTheDudeMan/the_odin_project/tree/master/hangman).
 

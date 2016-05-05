@@ -125,7 +125,7 @@ class Human < Codemaker
 end
 
 
-class Mastermind
+class Mastermind < Codemaker
 	def initialize
 		play
 	end

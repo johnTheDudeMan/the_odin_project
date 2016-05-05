@@ -12,27 +12,18 @@ def merge_sort(ary)
 	c = merge_sort(c)
 
 	#merge
-	result = []
-	indx_b = 0
-	indx_c = 0
+	sorted_array = []
 
-	while result.size < (b.size + c.size)
-		if indx_b == b.size
-			(result << c[indx_c..-1]).flatten!
-		elsif indx_c == c.size
-			(result << b[indx_b..-1]).flatten!
-		elsif b[indx_b] <= c[indx_c]
-			result << b[indx_b]
-			indx_b += 1
+	until b.empty? || c.empty?
+		if b[0] <= c[0]
+			sorted_array << b.shift 
 		else
-			result << c[indx_c]
-			indx_c += 1
+			sorted_array << c.shift
 		end
 	end
 
-	return result		
+	sorted_array + b + c	
 
 end
 
-
-p merge_sort([3,222,2,5,1,7,9,4,3,4,1,44,66,77,80,-32])
+p merge_sort([3,222,2,5,1,7,9,4,3,4,1,44,66,77,80,-32,111])

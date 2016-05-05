@@ -1,0 +1,8 @@
+gem 'rspec', '~>3'
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new do |task|
+  task.pattern = "spec/**/*_spec.rb"
+  task.verbose = false
+  task.rspec_opts = ['--color', '--format', 'doc']
+end

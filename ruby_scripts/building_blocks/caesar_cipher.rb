@@ -18,4 +18,11 @@ def caesar_cipher(str, shift_factor)
 	letters.join("")
 end
 
-puts caesar_cipher("What a string!", 5)
+str = "I am the cat of cats"
+puts str
+str_ciphed = caesar_cipher(str, 5)
+puts str_ciphed
+puts caesar_cipher(str_ciphed, -5)
+str_with_numbers = "How about the number 13"
+puts str_with_numbers
+puts caesar_cipher(str_with_numbers, 2)
